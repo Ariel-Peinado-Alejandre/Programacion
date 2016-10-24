@@ -11,29 +11,36 @@ import java.util.Scanner;
  *
  * @author alumno
  */
+
 public class Ejercicio_Primos {
 
-    public static void Verprimo(int num1){
-    
-      for (int j=2;j<10;j++){
-          if (num1/j==0);
-          
-          
-          
+    public static boolean Verprimo(int num1){
+      boolean bandera; 
+      int j;
+      bandera=false;
+      for (int i=2;i<num1;i++){
+          if ((num1%i)==0){
+            bandera=true;
+            i=num1;
+          }   
       }  
-    
-    
-        
-        
-        
+      return bandera;
+      
 }
     
-    
-    
-    
-    
-    
-    
+    public static int Siguienteprimo(int num1){
+        
+        boolean bandera=true;
+        int i;
+        for (i=(num1+1);bandera==true;i++){
+            if (Verprimo(i)==false){
+                bandera=false;  
+                
+            }
+        }
+        return i;
+    }
+            
     
     
     
@@ -44,13 +51,28 @@ public class Ejercicio_Primos {
         // TODO code application logic here
         Scanner leer=new Scanner(System.in);
         int num;
+        boolean bandera;
+        
+        bandera=true;
+        while (bandera){
+            System.out.println("Dame un numero y te dire si es primo");
+            num=leer.nextInt();
         
         
-        System.out.println("Dame un numero y te dire si es ");
-        num=leer.nextInt();
+            
+            if (Verprimo(num)){
+                System.out.println("El numero "+num+" no es primo"); 
+                }else{
+                System.out.println("El numero "+num+" es primo");
+                }
+           
+            System.out.println("Y el siguiente numero primo es: "+Siguienteprimo(num));
         
-        Verprimo(num);
-        
+        if (num==0){
+            bandera=false;
+        }
+        }
+            
         
         
         
