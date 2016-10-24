@@ -15,7 +15,12 @@ public class Ejercicio_Primos {
 
     public static void Verprimo(int num1){
     
-        
+      for (int j=2;j<10;j++){
+          if (num1/j==0);
+          
+          
+          
+      }  
     
     
         
