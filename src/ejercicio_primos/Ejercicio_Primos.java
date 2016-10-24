@@ -16,7 +16,6 @@ public class Ejercicio_Primos {
 
     public static boolean Verprimo(int num1){
       boolean bandera; 
-      int j;
       bandera=false;
       for (int i=2;i<num1;i++){
           if ((num1%i)==0){
@@ -31,14 +30,14 @@ public class Ejercicio_Primos {
     public static int Siguienteprimo(int num1){
         
         boolean bandera=true;
-        int i;
+        int i,j = 0;
         for (i=(num1+1);bandera==true;i++){
             if (Verprimo(i)==false){
                 bandera=false;  
-                
+                j=i;
             }
         }
-        return i;
+        return j;
     }
             
     
@@ -59,15 +58,15 @@ public class Ejercicio_Primos {
             num=leer.nextInt();
         
         
-            
+        if (num!=0){
             if (Verprimo(num)){
                 System.out.println("El numero "+num+" no es primo"); 
                 }else{
                 System.out.println("El numero "+num+" es primo");
                 }
-           
+          
             System.out.println("Y el siguiente numero primo es: "+Siguienteprimo(num));
-        
+        }
         if (num==0){
             bandera=false;
         }
